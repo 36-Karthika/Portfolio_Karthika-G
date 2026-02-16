@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karthika | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#0f2027;
+    --card:rgba(255,255,255,0.08);
+    --text:#ffffff;
+    --accent:#00f5a0;
+}
+
+.light{
+    --bg:#f4f4f4;
+    --card:rgba(0,0,0,0.05);
+    --text:#111;
+    --accent:#6a11cb;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    transition:0.4s;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    padding:15px;
+    background:rgba(0,0,0,0.3);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav a{
+    color:var(--text);
+    text-decoration:none;
+}
+
+.toggle-btn{
+    position:absolute;
+    right:20px;
+    cursor:pointer;
+}
+
+/* SECTIONS */
+section{
+    min-height:100vh;
+    padding:100px 10%;
+}
+
+h1{font-size:3rem;}
+h2{margin-bottom:25px;color:var(--accent);}
+
+/* HOME */
+.home-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+.profile-img{
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid var(--accent);
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    transition:0.4s;
+}
+
+.profile-img:hover{
+    transform:scale(1.05);
+}
+
+/* CARD */
+.card{
+    background:var(--card);
+    padding:20px;
+    margin:15px 0;
+    border-radius:15px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    padding:10px 20px;
+    background:var(--accent);
+    color:black;
+    border-radius:25px;
+    text-decoration:none;
+    margin:8px 5px;
+    font-weight:600;
+}
+
+/* SKILLS */
+.skill{margin:15px 0;}
+.progress{
+    background:#333;
+    border-radius:20px;
+    overflow:hidden;
+}
+.progress-bar{
+    height:10px;
+    width:0;
+    background:var(--accent);
+    transition:1.5s;
+}
+
+/* CERTIFICATES */
+.cert-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+.cert-card{
+    background:var(--card);
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    transition:0.4s;
+}
+.cert-card:hover{
+    transform:translateY(-10px);
+}
+.cert-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    text-align:center;
+    padding-top:60px;
+    z-index:2000;
+}
+.modal img{
+    max-width:90%;
+    max-height:85%;
+}
+.close{
+    position:absolute;
+    top:20px;
+    right:40px;
+    color:white;
+    font-size:30px;
+    cursor:pointer;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    h1{font-size:2rem;}
+    section{padding:100px 5%;}
+}
+
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">about</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#contact">Contact</a>
+    <span class="toggle-btn" onclick="toggleTheme()">🌙</span>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+    <div class="home-container">
+        <div>
+            <h1>Hi, I'm Karthika 👋</h1>
+            <p>Python Full Stack Developer | B.Tech IT Graduate</p>
+            <br>
+            <a href="assets/resume.pdf" download class="btn">
+                Download Resume
+            </a>
+        </div>
+        <div>
+            <img src="assets/profile.jpg" alt="Profile Image" class="profile-img">
+        </div>
+    </div>
+</section>
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Me</h2>
+
+    <div class="card">
+        <p>
+            I am a passionate and self-motivated Python Full Stack Developer
+            and B.Tech Information Technology graduate with strong knowledge
+            in frontend and backend development.
+        </p>
+
+        <br>
+
+        <p>
+            I specialize in building responsive web applications using
+            HTML, CSS, JavaScript, Bootstrap and Django.
+            I have developed projects including an E-Commerce website,
+            TeleCRM system, and a healthcare-based static website.
+        </p>
+
+        <br>
+
+        <p>
+            I am comfortable working with MySQL databases, Git, GitHub,
+            and modern development tools. I enjoy solving problems,
+            learning new technologies, and building real-world applications.
+        </p>
+
+        <br>
+
+        <p>
+            My goal is to start my career as a Software Developer where I can
+            contribute my skills, grow professionally, and create impactful solutions.
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Skillset</h2>
+
+    <!-- FRONTEND -->
+    <h3>💻 Frontend Development</h3>
+
+    <div class="skill">
+        <p>HTML</p>
+        <div class="progress"><div class="progress-bar" data-progress="95%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>CSS</p>
+        <div class="progress"><div class="progress-bar" data-progress="90%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>JavaScript</p>
+        <div class="progress"><div class="progress-bar" data-progress="80%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Bootstrap</p>
+        <div class="progress"><div class="progress-bar" data-progress="85%"></div></div>
+    </div>
+
+    <br>
+
+    <!-- BACKEND -->
+    <h3>🗄 Backend & Database</h3>
+
+    <div class="skill">
+        <p>Django</p>
+        <div class="progress"><div class="progress-bar" data-progress="85%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>MySQL</p>
+        <div class="progress"><div class="progress-bar" data-progress="80%"></div></div>
+    </div>
+
+    <br>
+
+    <!-- PROGRAMMING -->
+    <h3>🧠 Programming Languages</h3>
+
+    <div class="skill">
+        <p>Python</p>
+        <div class="progress"><div class="progress-bar" data-progress="90%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>C</p>
+        <div class="progress"><div class="progress-bar" data-progress="75%"></div></div>
+    </div>
+
+    <br>
+
+    <!-- MISC -->
+    <h3>⚙ Miscellaneous</h3>
+
+    <div class="skill">
+        <p>Git</p>
+        <div class="progress"><div class="progress-bar" data-progress="85%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>GitHub</p>
+        <div class="progress"><div class="progress-bar" data-progress="85%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Canva</p>
+        <div class="progress"><div class="progress-bar" data-progress="90%"></div></div>
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="card">
+        <h3>🛒 E-Commerce Django Website</h3>
+        <p>Full-stack e-commerce web app using Django, Python and SQLite.</p>
+        <a href="https://github.com/36-Karthika/ecommerce-django" target="_blank" class="btn">GitHub</a>
+    </div>
+
+    <div class="card">
+        <h3>🏥 Medico Static Website</h3>
+        <p>Responsive healthcare website built using HTML, CSS & JavaScript.</p>
+        <a href="https://github.com/36-Karthika/Medico-web" target="_blank" class="btn">GitHub</a>
+    </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates">
+    <h2>My Certifications</h2>
+
+    <div class="cert-container">
+
+        <div class="cert-card">
+            <img src="assets/certifi1.jpg">
+            <h3>Python Full Stack Development</h3>
+            <button class="btn" onclick="openImage('assets/certifi1.jpg')">Preview</button>
+            <a href="assets/certifi1.jpg" download class="btn">Download</a>
+        </div>
+
+        <div class="cert-card">
+            <img src="assets/certifi2.jpg">
+            <h3>Internship Certificate</h3>
+            <button class="btn" onclick="openImage('assets/certifi2.jpg')">Preview</button>
+            <a href="assets/certifi2.jpg" download class="btn">Download</a>
+        </div>
+
+        <div class="cert-card">
+            <h3>Django Project Certificate (PDF)</h3>
+            <a href="assets/NM_Certificate.pdf" target="_blank" class="btn">View PDF</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+        <p>Email: gkarthip.2004@gmail.com</p>
+        <p>Phone: +91-9345652808</p>
+        <p>LinkedIn: linkedin.com/in/karthikagunasekaran</p>
+    </div>
+</section>
+
+<!-- IMAGE MODAL -->
+<div class="modal" id="imageModal">
+    <span class="close" onclick="closeImage()">✖</span>
+    <img id="modalImg">
+</div>
+
+<script>
+function toggleTheme(){
+    document.body.classList.toggle("light");
+}
+
+window.addEventListener("scroll",()=>{
+    document.querySelectorAll(".progress-bar").forEach(bar=>{
+        if(window.scrollY >= document.getElementById("skills").offsetTop-400){
+            bar.style.width=bar.getAttribute("data-progress");
+        }
+    });
+});
+
+function openImage(src){
+    document.getElementById("imageModal").style.display="block";
+    document.getElementById("modalImg").src=src;
+}
+
+function closeImage(){
+    document.getElementById("imageModal").style.display="none";
+}
+</script>
+
+</body>
+</html>
